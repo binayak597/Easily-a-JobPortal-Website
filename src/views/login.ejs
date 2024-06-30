@@ -1,0 +1,30 @@
+<!-- views/login.ejs -->
+<div style="min-width: 320px;" class="d-flex flex-column justify-content-center align-items-center w-25">
+<% if(errorMessage){ %>
+  <div class="alert alert-danger">
+    <%= errorMessage %>
+  </div>
+<% } %>
+
+<h1 class="mt-5 mb-4 header">Login</h1>
+
+  <form style="width: 100%" action="/login" method="post">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>   
+    </div>
+    
+    <button type="submit" style="width: 100%" class="btn btn-primary">Login</button>
+
+  </form>
+
+  <div class="mt-2">
+    <span>Signup Now</span>
+    <a href="/register">Register</a>
+  </div>
+</div>

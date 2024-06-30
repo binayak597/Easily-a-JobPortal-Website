@@ -1,0 +1,51 @@
+<!-- view/applicantDetails.ejs -->
+
+
+
+<div style="min-width: 420px;" class="w-75 d-flex flex-column">
+    <% if(locals.applicants.length > 0){ %>
+
+        
+            <h1 class="mt-5 mb-4 header text-center">Applicants Details</h1>
+            
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Resume</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+        
+                        <% applicants.forEach((applicant, idx) => { %>
+        
+                            <tr>
+                                <th><%= idx + 1 %></th>
+                                <td><%= applicant.name %></td>
+                                <td><%= applicant.email %></td>
+                                <td>
+                                    <% if(applicant.resume){ %>
+                                        <a href="<%= applicant.resume %>" class="btn btn-danger px-4" target="_blank">Resume</a>
+                                    <% }else{ %>
+                                        No Resume
+                                    <% } %>
+                                    
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+        
+                </table>
+            <div>
+                <a href="/job/<%= jobFound.id %>" class="btn btn-warning px-4">Back</a>
+            </div>
+    <% }else{ %>
+        <div class="d-flex gap-3 mt-5">
+            <h4>Applicants are not Found</h4>
+        <a href="/job/<%= jobFound.id %>" class="btn btn-warning px-4">Back</a>
+        </div>
+    <% } %>
+</div>

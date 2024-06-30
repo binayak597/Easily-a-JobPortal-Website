@@ -1,0 +1,42 @@
+<!-- view/home.ejs -->
+
+
+<div style="width: 100%; margin: 3.5rem 1.2rem;" class="d-flex gap-2">
+    <div style="margin-top: 9rem;" class="container-leftside">
+        <div class="heading-section">
+            <h1 class="heading-text">
+                A Comprehensive Platform for Reliable
+            </h1>
+            <h1 clas="typing-effect">
+                Job Opportunities and Internships
+            </h1>
+        </div>
+    
+        <div class="actions mt-4">
+            <% if(locals.userEmail && locals.userFound){ %>
+                <h5 class="mb-2">Hey, <%= locals.typeOfUser %></h5>
+                <% if(locals.typeOfUser === "Recruiter"){ %>
+                    <a href="/jobs/recruiter/<%= locals.userFound.id %>" class="btn btn-primary px-4">View All Jobs</a>
+                <% }else{ %>
+                    <a href="/jobs" class="btn btn-primary px-4">Explore Our Jobs</a>
+                <% } %>
+            <% }else{ %>
+                <a href="/login" class="btn btn-primary px-4">I'm a JobSeeker</a>
+                <a href="/login" class="btn btn-primary px-4">I'm a JobRecruiter</a>
+            <% } %>
+        </div>
+    </div>
+    
+    <div class="container-rightside">
+    
+        <div class="heading-image">
+            <img style="width: 580px; height: 480px;" src="/images/office.png" alt="jobdemo">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

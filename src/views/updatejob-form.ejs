@@ -1,0 +1,89 @@
+<!-- views/update-form.ejs -->
+
+<div  style="min-width: 420px;" class="d-flex flex-column me-auto w-50">
+
+  <h1 class="mt-5 mb-4 header">Update Job</h1>
+
+  <div class="border border-secondary-subtle px-4 py-3">
+    <form action="/updatejob" method="post">
+      <input type="hidden" class="form-control" name="jobId" value="<%= jobFound.id %>">
+      <input type="hidden" class="form-control" name="userId" value="<%= userFound.id %>">
+      <div class="mb-3">
+        <select class="form-select" name="jobCategory" required>
+          <option selected>Select Job Category</option>
+          <option value="Tech">Tech</option>
+          <option value="NonTech">NonTech</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+          <select class="form-select" name="jobDesignation" required>
+            <option selected>Select Job Designation</option>
+            <option value="FrontEnd Developer">FrontEnd Developer</option>
+            <option value="BackEnd Developer">BackEnd Developer</option>
+            <option value="FullStack Developer">FullStack Developer</option>
+            <option value="Python Developer">Python Developer</option>
+            <option value="SDE">SDE</option>
+            <option value="SDE2">SDE2</option>
+            <option value="MERN Developer">MERN Developer</option>
+            <option value="React Developer">React Developer</option>
+          </select>
+        </div>
+  
+      <div class="mb-3">
+          <select class="form-select" name="jobLocation" required>
+              <option selected>Select Job Location</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Pune">Pune</option>
+              <option value="NCR,Delhi">NCR,Delhi</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Chennai">Chennai</option>
+            </select>
+        </div>
+  
+      <div class="mb-3">
+          <label for="company" class="form-label">Company Name</label>
+          <input type="text" class="form-control" id="company" name="companyName" required>   
+      </div>
+  
+      <div class="mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="text" class="form-control" id="salary" name="salary" required>   
+      </div>
+  
+      <div class="mb-3">
+          <label for="apply" class="form-label">Apply By</label>
+          <input type="date" class="form-control" id="apply" name="applyBy" required>   
+      </div>
+  
+      <div class="mb-3">
+          <select class="form-select" name="skills" multiple required>
+              <option selected>Skills</option>
+              <option value="HTML">HTML</option>
+              <option value="css">css</option>
+              <option value="Javascript">Javascript</option>
+              <option value="Node.JS">Node.JS</option>
+              <option value="Express">Express</option>
+              <option value="Jquery">Jquery</option>
+              <option value="Git">Git</option>
+              <option value="Swift">Swift</option>
+              <option value="Python">Python</option>
+              <option value="ReactJS">ReactJS</option>
+              <option value="AngularJS">AngularJS</option>
+              <option value="DataStructures & Algorithms">DataStructures & Algorithms</option>
+            </select>
+      </div>
+  
+      <div class="mb-3">
+          <label for="openings" class="form-label">Number of Openings</label>
+          <input type="text" class="form-control" id="openings" name="numofOpenings" required>   
+      </div>
+  
+      
+      
+      <button type="submit" class="btn btn-primary px-4">Update Job</button>
+    </form>
+  </div>
+
+</div>

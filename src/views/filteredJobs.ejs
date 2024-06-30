@@ -1,0 +1,23 @@
+<!-- view/filteredJobs.ejs -->
+
+<div class="d-flex flex-column me-auto p-2">
+  <h1 class="mt-5 mb-4 header">Jobs</h1>
+
+    <!-- here are displaying all the filtered jobs -->
+
+    <div  class="d-flex flex-wrap gap-3">
+      <% if(jobs.length > 0){ %>
+        <% jobs.forEach(job => { %>
+          <div class="card mb-3" style="width: 19rem;">
+              <div class="card-body">
+                <h5 class="card-title">Company Name: <%= job.companyName %></h5>
+                <h6 class="card-title">Job Role: <%= job.jobDesignation %></h6>
+                <h6 class="card-title">Location: <%= job.jobLocation %></h6>
+                <p class="card-text">Package: <%= job.salary %></p>
+                <a style="margin-left: 73px;" href="/job/<%= job.id %>" class="btn btn-primary">View Details</a>
+              </div>
+          </div>
+        <% }) %>
+    <% } %>
+    </div>
+</div>
